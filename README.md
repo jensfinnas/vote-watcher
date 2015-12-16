@@ -12,14 +12,14 @@ First find a parliament vote that corresponds to a question in the election mach
 
 Then init VoteWatcher.
 
-```
+``` python
 from votewatcher import VoteWatcher
 vw = VoteWatcher(128, "https://www.eduskunta.fi/FI/vaski/Sivut/Aanestys.aspx?aanestysnro=19&istuntonro=82&vuosi=2015")
 ```
 
 Results will be saved in two [Agate](http://agate.readthedocs.org/en/1.1.0/api/table.html) tables. One with all data. One with just the MP's that didn't vote according to their promises.
 
-```
+``` python
 vw.table_all.to_csv("all.csv")
 vw.table_diff.to_csv("promise-breakers.csv")
 ```
